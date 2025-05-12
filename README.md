@@ -9,6 +9,7 @@ Toyscraper is a command-line web scraping tool that extracts and processes web c
 - **Markdown Conversion**: Converts cleaned HTML to Markdown for better readability
 - **AI Content Extraction**: Uses Google's Gemini AI model to extract structured information (optional)
 - **JSON Output**: Option to output extracted content in JSON format
+- **Job Posting Extraction**: Specialized extraction for job postings with structured schema
 
 ## Installation
 
@@ -74,6 +75,7 @@ toyscraper/
 │   └── toyscraper/       # Command-line application
 │       └── main.go
 ├── internal/
+│   ├── classifier/       # Content classification functionality
 │   ├── cleaner/          # HTML cleaning functionality
 │   ├── config/           # Application configuration
 │   ├── converter/        # HTML to Markdown conversion
