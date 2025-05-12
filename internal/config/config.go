@@ -51,6 +51,7 @@ Use markdown format and structure to enhance extraction accuracy.
 </user_request>
 
 <schema_block>
+%s
 </schema_block>
 
 Please carefully read the URL content and the user's request. If the user provided a desired JSON schema in the <schema_block> above, extract the requested information from the URL content according to that schema. If no schema was provided, infer an appropriate JSON schema based on the user's request that will best capture the key information they are looking for.

@@ -27,11 +27,11 @@ func NewExtractor(ctx context.Context, apiKey string) (*Extractor, error) {
 }
 
 // ExtractContent extracts content from the provided raw content using the GenAI client.
-func (e *Extractor) ExtractContent(ctx context.Context, model, url, rawContent string) (string, error) {
+func (e *Extractor) ExtractContent(ctx context.Context, model, schema, url, rawContent string) (string, error) {
 	result, err := e.client.Models.GenerateContent(
 		ctx,
 		model,
-		genai.Text(fmt.Sprintf(config.ExtractionPrompt, url, rawContent)),
+		genai.Text(fmt.Sprintf(config.ExtractionPrompt, url, rawContent, schema)),
 		nil,
 	)
 	if err != nil {

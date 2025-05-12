@@ -11,6 +11,7 @@ import (
 	"github.com/danmrichards/sandbox/toyscraper/internal/config"
 	"github.com/danmrichards/sandbox/toyscraper/internal/converter"
 	"github.com/danmrichards/sandbox/toyscraper/internal/extractor"
+	"github.com/danmrichards/sandbox/toyscraper/internal/schema"
 	"github.com/danmrichards/sandbox/toyscraper/internal/scraper"
 )
 
@@ -57,8 +58,20 @@ func main() {
 		log.Fatalf("Failed to create extractor: %v", err)
 	}
 
-	// Extract content
-	extractedContent, err := ext.ExtractContent(context.Background(), config.ExtractionModel, url, markdown)
+	// Use a JSON schema to structure the extracted content.
+	jobSchema, err := schema.JSONSchemaString(schema.JobPosting{})
+	if err != nil {
+		log.Fatalf("Failed to get JSON schema: %v", err)
+	}
+
+	// Extract content.
+	extractedContent, err := ext.ExtractContent(
+		context.Background(),
+		config.ExtractionModel,
+		jobSchema,
+		url,
+		markdown,
+	)
 	if err != nil {
 		log.Fatalf("Failed to extract content: %v", err)
 	}
