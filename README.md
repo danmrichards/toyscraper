@@ -51,8 +51,6 @@ To scrape a web page and output its cleaned content as Markdown:
 
 - `-url`: (Required) URL to scrape
 - `-timeout`: (Optional) Timeout in seconds (default: 30)
-- `-extract`: (Optional) Extract structured information using AI (requires Google API key)
-- `-json`: (Optional) Output in JSON format (only applies with -extract)
 
 ### Examples
 
