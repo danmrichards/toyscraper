@@ -78,6 +78,7 @@ toyscraper/
 │   ├── config/           # Application configuration
 │   ├── converter/        # HTML to Markdown conversion
 │   ├── extractor/        # AI-powered content extraction
+│   ├── schema/           # Data structures for content extraction
 │   └── scraper/          # Web scraping functionality
 ```
 

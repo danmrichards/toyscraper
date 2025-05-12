@@ -1,22 +1,25 @@
 // Package config provides configuration constants for the application
 package config
 
-// Default timeout values in seconds
+// Defaults.
 const (
 	// DefaultTimeout is the default timeout for scraping operations
 	DefaultTimeout = 30
 
 	// MaxTimeout is the maximum allowed timeout for scraping operations
 	MaxTimeout = 120
-)
 
-// Browser configurations
-const (
 	// DefaultViewportWidth is the default viewport width for the browser
 	DefaultViewportWidth = 1920
 
 	// DefaultViewportHeight is the default viewport height for the browser
 	DefaultViewportHeight = 1080
+
+	// DefaultClassifierModel is the default model used for classification tasks
+	DefaultClassifierModel = "facebook/bart-large-mnli"
+
+	// DefaultClassifierModelDir is the default directory for storing classifier models
+	DefaultClassifierModelDir = "models"
 )
 
 // HTML and Markdown configurations
@@ -74,6 +77,13 @@ Avoid Common Mistakes:
 Result
 Output the final list of JSON objects. Make sure to close the tag properly.`
 )
+
+// ClassificationLabels are the labels used for classification tasks
+var ClassificationLabels = []string{
+	"job posting",
+	"job listing",
+	"careers",
+}
 
 // List of unwanted element tags to remove during cleaning
 var UnwantedElements = map[string]bool{
